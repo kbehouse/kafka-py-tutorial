@@ -1,5 +1,16 @@
 # Kafka-py-tutorial
 
+## Install librdkafka
+
+Install (librdkafka)[https://github.com/edenhill/librdkafka]
+
+```
+# Mac OSX
+brew install librdkafka
+# Debian, Ubuntu 
+sudo  apt install librdkafka-dev
+```
+
 ## Start confulent kafka 
 
 ```
