@@ -56,6 +56,7 @@ if __name__ == '__main__':
         try:
             # Produce line (without newline)
             p.produce(topic, line.rstrip(), callback=delivery_callback)
+            # p.produce(topic, line.rstrip())
 
         except BufferError:
             sys.stderr.write('%% Local producer queue is full (%d messages awaiting delivery): try again\n' %
@@ -65,7 +66,7 @@ if __name__ == '__main__':
         # NOTE: Since produce() is an asynchronous API this poll() call
         #       will most likely not serve the delivery callback for the
         #       last produce()d message.
-        # p.poll(0)
+        p.poll(0)
 
     # Wait until all messages have been delivered
     sys.stderr.write('%% Waiting for %d deliveries\n' % len(p))
